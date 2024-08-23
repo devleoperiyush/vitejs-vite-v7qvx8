@@ -1,14 +1,22 @@
 import { useState, useEffect } from 'react';
 import reactLogo from './assets/react.svg';
 import viteLogo from '/vite.svg';
+import TestForm from './components/form';
 import './App.css';
 
 function App() {
   const [count, setCount] = useState(0);
+  const [name, setName] = useState<string>("intial");
+
   useEffect(() => {
     console.log('call');
     setCount((prev) => prev + 1);
   }, []);
+
+  const handleOnChange = (value : any) => {
+    console.log(value);
+    setName(value);
+  }
   return (
     <>
       <div>
@@ -22,7 +30,7 @@ function App() {
       <h1>Vite + React</h1>
       <div className="card">
         <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
+          count is {count} {name}
         </button>
         <p>
           Edit <code>src/App.tsx</code> and save to test HMR
@@ -31,6 +39,7 @@ function App() {
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
       </p>
+      <TestForm testName={name} handleOnChange = {handleOnChange}></TestForm>
     </>
   );
 }
