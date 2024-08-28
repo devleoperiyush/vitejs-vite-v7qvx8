@@ -11,7 +11,8 @@ const ParentComponent1 = () => {
   const [text, setText] = useState('');
 
   // Memoize the result of the expensive computation
-  const expensiveValue = useMemo(() => computeExpensiveValue(count), [count]);
+  const expensiveValue = useMemo(() => computeExpensiveValue(count),
+   [count]);
 
   return (
     <div>
