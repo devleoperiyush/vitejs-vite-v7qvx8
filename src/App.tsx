@@ -5,6 +5,7 @@ import TestForm from './components/form';
 import './App.css';
 // import ParentComponent from './components/callback/callback';
 import ParentComponent from './components/callback/memo';
+import List from './components/list/list';
 
 function App() {
   const [count, setCount] = useState(0);
@@ -43,7 +44,7 @@ function App() {
       </p> */}
      {/* <ParentComponent /> */}
       <ParentComponent /> 
-
+      <List />
        {/* <TestForm testName={name} handleOnChange = {handleOnChange}></TestForm> */}
     </>
   );
